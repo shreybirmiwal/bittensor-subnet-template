@@ -39,6 +39,8 @@ async def forward(self):
     # get_random_uids is an example method, but you can replace it with your own.
     miner_uids = get_random_uids(self, k=self.config.neuron.sample_size)
 
+    bt.logging.info(f"VALIDATOR: Querying miners: {miner_uids}")
+    bt.logging.info("VALIDATOR: Sending encrypted model + vault to miners TEE through synapse")
     # The dendrite client queries the network.
     responses = await self.dendrite(
         # Send the query to selected miner axons in the network.
@@ -51,7 +53,7 @@ async def forward(self):
     )
 
     # Log the results for monitoring purposes.
-    bt.logging.info(f"Received responses: {responses}")
+    bt.logging.info(f"VALIDATOR: Received responses: {responses}")
 
     # TODO(developer): Define how the validator scores responses.
     # Adjust the scores based on responses from miners.

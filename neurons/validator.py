@@ -56,6 +56,7 @@ class Validator(BaseValidatorNeuron):
         - Rewarding the miners
         - Updating the scores
         """
+        btw.logging.info("VALIDATOR: Starting forward pass")
         # TODO(developer): Rewrite this function based on your protocol definition.
         return await forward(self)
 

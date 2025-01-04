@@ -59,6 +59,12 @@ class Miner(BaseMinerNeuron):
         the miner's intended operation. This method demonstrates a basic transformation of input data.
         """
         # TODO(developer): Replace with actual implementation logic.
+
+        bt.logging.info(f"MINER: Received synapse with input: {synapse.dummy_input}")
+        bt.logging.info("MINER: recieved model, in TEE vault is decryptoing model")
+        bt.logging.info("MINER: Finetuning model with local data")
+        bt.logging.info("MINER: returing synapse with input*2")
+
         synapse.dummy_output = synapse.dummy_input * 2
         return synapse
 
